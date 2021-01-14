@@ -78,8 +78,7 @@
 	.box-icon.box-icon-color i,
 	.switch-primary.switch-round > input:checked + .switch-label:after,
 	section.dark .nav-tabs.nav-clean>li>a.active { 
-		color: #b61919; 
-		/*color: #1980B6;*/ 
+		color: #1980B6;
 	}
 	
 	#sidepanel.sidepanel-theme-color,
