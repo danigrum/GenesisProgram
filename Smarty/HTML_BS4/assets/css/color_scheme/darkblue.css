@@ -1,13 +1,17 @@
 /** Dark Blue #1980B6
  **************************************************************** **/
 	::selection {
-		background: #1980B6;
+
+		background: #010874;
+		/*background: #1980B6;*/
 	}
 	::-moz-selection {
-		background: #1980B6; /* Firefox */
+		background: #010874;
+		/*background: #1923b6;*/ /* Firefox */
 	}
 	::-webkit-selection {
-		background: #1980B6; /* Safari */
+		background: #010874;
+		/*background: #1980B6;*/ /* Safari */
 	}
 
 
@@ -74,7 +78,8 @@
 	.box-icon.box-icon-color i,
 	.switch-primary.switch-round > input:checked + .switch-label:after,
 	section.dark .nav-tabs.nav-clean>li>a.active { 
-		color: #1980B6; 
+		color: #b61919; 
+		/*color: #1980B6;*/ 
 	}
 	
 	#sidepanel.sidepanel-theme-color,
