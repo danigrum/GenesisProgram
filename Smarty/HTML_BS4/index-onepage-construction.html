@@ -1382,26 +1382,45 @@
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
-											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
+
+											<div class="col-md-4"> <!-- name -->
+												<label for="name">Full Name *</label>
 												<input required type="text" value="" class="form-control" name="contact[name][required]" id="name">
 											</div>
-											<div class="col-md-4">
-												<label for="contact:email">E-mail Address *</label>
+
+											<div class="col-md-4"> <!-- email -->
+												<label for="email">E-mail Address *</label>
 												<input required type="email" value="" class="form-control" name="contact[email][required]" id="email">
 											</div>
-											<div class="col-md-4">
-												<label for="contact:phone">Phone</label>
+
+											<div class="col-md-4"> <!-- phone -->
+												<label for="phone">Phone</label>
 												<input type="text" value="" class="form-control" name="contact[phone]" id="phone">
 											</div>
 									</div>
+
+
 									<div class="row">
-											<div class="col-md-8">
-												<label for="contact:subject">Subject *</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+
+											<div class="col-md-8"> <!-- company_name -->
+												<label for="company_name">Subject *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="company_name">
 											</div>
-											<div class="col-md-4">
-												<label for="contact_department">Department</label>
+
+											<div class="col-md-8"> <!-- project_name -->
+												<label for="project_name">Subject *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="project_name">
+											</div>
+
+											<div class="row"> <!-- project_description -->
+												<div class="col-md-12">
+													<label for="project_description">Message *</label>
+													<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="project_description"></textarea>
+												</div>
+										</div>											
+											
+											<div class="col-md-4"> <!-- department -->
+												<label for="department">Department</label>
 												<select class="form-control pointer" name="contact[department]">
 													<option value="">--- Select ---</option>
 													<option value="Marketing">Marketing</option>
@@ -1409,19 +1428,23 @@
 													<option value="Architecture">Architecture</option>
 												</select>
 											</div>
+
 									</div>
-									<div class="row">
+
+
+									<div class="row"> <!-- "message" -->
 											<div class="col-md-12">
-												<label for="contact:message">Message *</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+												<label for="message">Message *</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="message"></textarea>
 											</div>
 									</div>
-									<div class="row">
-											<div class="col-md-12">
-												<label for="contact:attachment">File Attachment</label>
 
+
+									<div class="row"> <!-- "attachment" -->
+											<div class="col-md-12">
+												<label for="attachment">File Attachment</label>
 												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
 												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 											</div>
