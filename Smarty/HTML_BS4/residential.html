@@ -53,85 +53,154 @@
 		BACKGROUND IMAGE [together with .boxed class]
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
+		
 	<body class="smoothscroll enable-animation">
 
+		
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
 
+			<div class="container">
+				
+				<div class="row">
 
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> WHY ROCKET ELEVATORS?</h6>
+						<p>We have the conviction that we create the most innovative and reliable products on the market.<br/>
+						Contact us today for any questions you might have.
+						</p>
+					</div>
 
-		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-			<!-- TOP NAV -->
-			<header id="topNav">
-				<div class="container">
+					<div class="col-md-4">
+						<h6><i class="fa-facheck"></i> SERVICES</h6>
+						<ul class="list-unstyled">
+							<li><a href="#services"><i class="fa fa-angle-right"></i>Services</a></li>
+							<li><a href="residential.html"><i class="fa fa-angle-right"></i>Residential</a></li>
+							<li><a href="commercial.html"><i class="fa fa-angle-right"></i>Commercial</a></li>
+							<li><a href="quote.html"><i class="fa fa-angle-right"></i>Get a submission</a></li>
+						</ul>
+					</div>
 
-					<!-- Mobile Menu Button -->
-					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-						<i class="fa fa-bars"></i>
-					</button>
-
-					<!-- Logo -->
-					<a class="logo float-left scrollTo" href="#top">
-						<img src="demo_files/images/AARocketElevR2.png" alt="Rocket Elevators logo" />
-					</a>
-
-					<!-- 
-						Top Nav 
-						
-						AVAILABLE CLASSES:
-						submenu-dark = dark sub menu
-					-->
-					<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-						<nav class="nav-main">
-
-							<!-- 
-								.nav-onepage
-								Required for onepage navigation links
-								
-								Add .external for an external link!
-							-->
-							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-								<li class="active"><!-- HOME -->
-									<a href="#slidetop">
-										HOME
-									</a>
-								</li>
-								<li><!-- SERVICES -->
-									<a class ='dropdown-toggle'>SERVICES</a>
-									<ul class='dropdown-menu white-space= normal'>
-										<li><a href="#services">Services</a></li>
-										<li><a href="residential.html" target="_blank">Residential</a></li>
-										<li><a href="commercial.html" target="_blank">Commercial</a></li>
-										<li><a href="quote.html" target="_blank">Get a submission</a></li>
-									</ul>
-								</li>
-								<li><!-- PORTFOLIO -->
-									<a href="#portfolio">
-										PORTFOLIO
-									</a>
-								</li>
-								<li><!-- NEWS -->
-									<a href="#news">
-										NEWS
-									</a>
-								</li>
-								<li><!-- CLIENTS -->
-									<a href="#clients">
-										CLIENTS
-									</a>
-								</li>
-								<li><!-- CONTACT -->
-									<a href="#contact">
-										CONTACT
-									</a>
-								</li>
-							</ul>
-
-						</nav>
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> 418-725 Boulevard Lebourgneuf<br /> 
+								Québec, QC G2J 0C4, Canada</li>
+							<li><b>Phone: (418) 555-1234</li>
+							<li><b>Email: <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></li>
+						</ul>
 					</div>
 
 				</div>
-			</header>
-			<!-- /Top Nav -->
-		</div>		
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
+
+		
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<!--AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
+
+			
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+							<img src="demo_files/images/AARocketElevR2.png" alt="Rocket Elevators logo" />
+						</a>
+
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active"><!-- HOME -->
+										<a href="AAAindex.html">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+                                        <a class ='dropdown-toggle'>SERVICES</a>
+                                        <ul class='dropdown-menu white-space= normal'>
+											<li><a href="#services">Services</a></li>
+                                            <li><a href="residential.html" target="_blank">Residential</a></li>
+                                            <li><a href="commercial.html" target="_blank">Commercial</a></li>
+                                            <li><a href="quote.html" target="_blank">Get a submission</a></li>
+                                        </ul>
+                                    </li>
+									<li><!-- PORTFOLIO -->
+										<a href="#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="#contact">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+			</div>
+
+
 
 
 
@@ -168,77 +237,6 @@
 
 		
 		
-
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-							<img src="demo_files/images/AARocketElevR2.png" alt="Rocket Elevators logo" />
-						</a>
-
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-
-								<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a href="#slidetop">
-											HOME
-										</a>
-									</li>
-									<li><!-- SERVICES -->
-										<a href="#services">
-											SERVICES
-										</a>
-									</li>
-									<li><!-- PORTFOLIO -->
-										<a href="#portfolio">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="#clients">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
-				</header>
-				<!-- /Top Nav -->
-
-			</div>
 
 
 
