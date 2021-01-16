@@ -21,6 +21,7 @@
 		<!-- THEME CSS -->
 		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout-dark.css" rel="stylesheet" type="text/css" />    <!-- Dark Layout -->
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
@@ -56,39 +57,81 @@
 
 
 
-		<!-- SLIDE TOP -->
-		<div id="slidetop">
 
-			<div class="container">
-				
-				<div class="row">
+		<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+			<!-- TOP NAV -->
+			<header id="topNav">
+				<div class="container">
 
-					<div class="col-md-4">
-						<h6><i class="icon-heart"></i> WHY ROCKET ELEVATORS?</h6>
-						<p>We have the conviction that we create the most innovative and reliable products on the market.<br/>
-						Contact us today for any questions you might have.
-						</p>
-					</div>
+					<!-- Mobile Menu Button -->
+					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
 
-					<div class="col-md-4">
-						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
-						<ul class="list-unstyled">
-							<li><b>Address:</b> 418-725 Boulevard Lebourgneuf<br /> 
-								Québec, QC G2J 0C4, Canada</li>
-							<li><b>Phone:</b> (418) 555-1234</li>
-							<li><b>Email:</b> <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></li>
-						</ul>
+					<!-- Logo -->
+					<a class="logo float-left scrollTo" href="#top">
+						<img src="demo_files/images/AARocketElevR2.png" alt="Rocket Elevators logo" />
+					</a>
+
+					<!-- 
+						Top Nav 
+						
+						AVAILABLE CLASSES:
+						submenu-dark = dark sub menu
+					-->
+					<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+						<nav class="nav-main">
+
+							<!-- 
+								.nav-onepage
+								Required for onepage navigation links
+								
+								Add .external for an external link!
+							-->
+							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+								<li class="active"><!-- HOME -->
+									<a href="#slidetop">
+										HOME
+									</a>
+								</li>
+								<li><!-- SERVICES -->
+									<a class ='dropdown-toggle'>SERVICES</a>
+									<ul class='dropdown-menu white-space= normal'>
+										<li><a href="#services">Services</a></li>
+										<li><a href="residential.html" target="_blank">Residential</a></li>
+										<li><a href="commercial.html" target="_blank">Commercial</a></li>
+										<li><a href="quote.html" target="_blank">Get a submission</a></li>
+									</ul>
+								</li>
+								<li><!-- PORTFOLIO -->
+									<a href="#portfolio">
+										PORTFOLIO
+									</a>
+								</li>
+								<li><!-- NEWS -->
+									<a href="#news">
+										NEWS
+									</a>
+								</li>
+								<li><!-- CLIENTS -->
+									<a href="#clients">
+										CLIENTS
+									</a>
+								</li>
+								<li><!-- CONTACT -->
+									<a href="#contact">
+										CONTACT
+									</a>
+								</li>
+							</ul>
+
+						</nav>
 					</div>
 
 				</div>
-
-			</div>
-
-			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
-
-		</div>
-		<!-- /SLIDE TOP -->
-
+			</header>
+			<!-- /Top Nav -->
+		</div>		
 
 
 
@@ -122,6 +165,9 @@
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+		
+		
 
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -193,6 +239,7 @@
 				<!-- /Top Nav -->
 
 			</div>
+
 
 
 

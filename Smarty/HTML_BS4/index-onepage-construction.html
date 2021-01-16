@@ -6,6 +6,7 @@
 		<meta name="description" content="Welcome to Rocket Elevators" />
 		<meta name="Author" content="Daniela Grumbach Kinder" />
 
+		<!-- Logo in the web tab -->
 		<link rel="icon" type="image/png" href="demo_files/images/AARocketElevR2justIcone.png">
 
 		<!-- mobile settings -->
@@ -54,6 +55,9 @@
 	-->
 	<body class="smoothscroll enable-animation">
 
+
+
+		
 		<!-- SLIDE TOP -->
 		<div id="slidetop">
 
@@ -88,6 +92,8 @@
 		<!-- /SLIDE TOP -->
 
 
+		
+
 		<!-- wrapper -->
 		<div id="wrapper">
 
@@ -117,7 +123,6 @@
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-
 				<!-- TOP NAV -->
 				<header id="topNav">
 					<div class="container">
@@ -154,10 +159,14 @@
 										</a>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="#services">
-											SERVICES
-										</a>
-									</li>
+                                        <a class ='dropdown-toggle'>SERVICES</a>
+                                        <ul class='dropdown-menu white-space= normal'>
+											<li><a href="#services">Services</a></li>
+                                            <li><a href="residential.html" target="_blank">Residential</a></li>
+                                            <li><a href="commercial.html" target="_blank">Commercial</a></li>
+                                            <li><a href="quote.html" target="_blank">Get a submission</a></li>
+                                        </ul>
+                                    </li>
 									<li><!-- PORTFOLIO -->
 										<a href="#portfolio">
 											PORTFOLIO
@@ -186,7 +195,6 @@
 					</div>
 				</header>
 				<!-- /Top Nav -->
-
 			</div>
 
 
@@ -490,8 +498,9 @@
 
 
 
-			
-			<section id="services"> <!-- Services -->
+
+			<!-- Services -->
+			<section id="services">
 				<div class="container">
 					
 					<div class="row">
@@ -839,7 +848,7 @@
 												</a>
 
 												<!-- details -->
-												<<!--a class="ico-rounded" href="portfolio-single-slider.html">
+												<!--a class="ico-rounded" href="portfolio-single-slider.html">
 													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
 												</a>-->
 
@@ -1450,7 +1459,8 @@
 								h-550
 								h-600
 							-->
-							<div id="map2" class="h-400 grayscale"> <!-- map -->
+							
+							<div id="map2"> <!-- map -->
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.0429937847525!2d-71.2818834848763!3d46.84284354841704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897ddc2cec043%3A0xd450d4d0da014cc8!2s725%20Boulevard%20Lebourgneuf%2C%20Qu%C3%A9bec%2C%20QC%20G2J%201S1!5e0!3m2!1sen!2sca!4v1610685079799!5m2!1sen!2sca" width="420" height="390" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>	
 							</div>
 
@@ -1577,8 +1587,9 @@
 		<script src="assets/plugins/gmaps.js"></script>
 		<script>
 
-			jQuery(document).ready(function(){
 
+
+			jQuery(document).ready(function(){
 				/**
 					@BASIC GOOGLE MAP
 				**/
@@ -1588,13 +1599,11 @@
 					lng: -77.028333,
 					scrollwheel: false
 				});
-
 				var marker = map2.addMarker({
 					lat: -12.043333,
 					lng: -77.028333,
 					title: 'Company, Inc.'
 				});
-
 			});
 
 		</script>
