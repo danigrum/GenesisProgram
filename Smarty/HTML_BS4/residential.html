@@ -186,7 +186,7 @@
 										</a>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="AAAindex.html#contact" target="_blank">
+										<a href="#contact" target="_blank">
 											CONTACT
 										</a>
 									</li>
@@ -1114,30 +1114,188 @@
 
 
 
-
-			<!-- CALLOUT -->
-			<div class="alert alert-transparent bordered-bottom m-0">
+			<!-- CONTACT -->
+			<section id="contact">
 				<div class="container">
 
+					<header class="text-center mb-60">
+						<h2>Contact Us</h2>
+						<p class="lead font-lato">Tell us about you</p>
+						<hr />
+					</header>
 					<div class="row">
 
-						<div class="col-md-9 col-sm-12"><!-- left text -->
-							<h3>Call now at <span><strong>(418) 555-1234</strong></span> and get 15% discount!</h3>
-							<p class="font-lato fw-300 fs-20 mb-0">
-								We truly care about our users and our product.
-							</p>
-						</div><!-- /left text -->
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
 
-						
-						<div class="col-md-3 col-sm-12 text-right"><!-- right btn -->
-							<a href="AAAindex.html#contact" target="_blank" class="btn btn-primary btn-lg">CONTACT US</a>
-						</div><!-- /right btn -->
+							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+
+							
+							<!--MESSAGES
+								
+									How it works?
+									The form data is posted to php/contact.php where the fields are verified!
+									php.contact.php will redirect back here and will add a hash to the end of the URL:
+										#alert_success 		= email sent
+										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
+										#alert_mandatory	= email not sent - required fields empty
+										Hashes are handled by assets/js/contact.js
+
+									Form data: required to be an array. Example:
+										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
+										Also, add `required` to input fields if is a mandatory field. 
+										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
+
+									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
+												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
+
+									WARNING! Do not change the `email` and `name`!
+												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)-->
+
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row">
+
+											<div class="col-md-4"> <!-- name -->
+												<label for="name">Full Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="name">
+											</div>
+
+											<div class="col-md-4"> <!-- email -->
+												<label for="email">E-mail Address *</label>
+												<input required type="email" value="" class="form-control" name="contact[email][required]" id="email">
+											</div>
+
+											<div class="col-md-4"> <!-- phone -->
+												<label for="phone">Phone</label>
+												<input type="text" value="" class="form-control" name="contact[phone]" id="phone">
+											</div>
+									</div>
+
+
+									<div class="row"> <!-- company_name , project_name , project_description , department -->
+
+											<div class="col-md-8"> <!-- company_name -->
+												<label for="company_name">Business Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="company_name">
+											</div>
+
+											<div class="col-md-8"> <!-- project_name -->
+												<label for="project_name">Project Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="project_name">
+											</div>
+
+											<div class="col-md-8"> <!-- project_description -->
+												<label for="project_description">Project Description *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="project_description">
+											</div>								
+											
+											<div class="col-md-4"> <!-- department -->
+												<label for="department">Department</label>
+												<select class="form-control pointer" name="contact[department]">
+													<option value="">--- Select ---</option>
+													<option value="residential">Residential</option>
+													<option value="commercial">Commercial</option>
+												</select>
+											</div>
+
+									</div>
+
+
+									<div class="row"> <!-- "message" -->
+											<div class="col-md-12">
+												<label for="message">Message *</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="message"></textarea>
+											</div>
+									</div>
+
+
+									<div class="row"> <!-- "attachment" -->
+											<div class="col-md-12">
+												<label for="attachment">File Attachment</label>
+												<!-- custom file upload -->
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+											</div>
+									</div>
+
+								</fieldset>
+
+								<div class="row"> <!-- button: message-->
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<!-- /FORM -->
+
+
+						<!-- INFO -->
+						<div class="col-md-4 col-sm-4">
+
+							<h2>Visit Us</h2>
+ 
+							<!--Available heights
+								h-100
+								h-150
+								h-200
+								h-250
+								h-300
+								h-350
+								h-400
+								h-450
+								h-500
+								h-550
+								h-600-->
+							
+							<div id="map2"> <!-- map -->
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.0429937847525!2d-71.2818834848763!3d46.84284354841704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897ddc2cec043%3A0xd450d4d0da014cc8!2s725%20Boulevard%20Lebourgneuf%2C%20Qu%C3%A9bec%2C%20QC%20G2J%201S1!5e0!3m2!1sen!2sca!4v1610685079799!5m2!1sen!2sca" width="420" height="390" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>	
+							</div>
+
+							<hr />
+
+							<p> <!-- Rocket Elevators contact -->
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> 418-725 Boulevard Lebourgneuf, Québec, QC G2J 0C4, Canada</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="Phone: (418) 555-1234">(418) 555-1234</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a></span>
+							</p>
+
+						</div>
+						<!-- /INFO -->
 
 					</div>
 
 				</div>
-			</div>
-			<!-- /CALLOUT -->
+			</section>
+			<!-- /CONTACT -->
+
 
 
 
@@ -1145,42 +1303,29 @@
 			<footer id="footer">
 				<div class="container">
 
+
 					<div class="row">
-						
-						<div class="col-md-3">
-							
-							<!-- Footer Logo -->
-							<a href="#top"><img class="footer-logo" src="demo_files/images/AAARocketElevLogoFooter.png"  alt="Rocket Elevetors's logo'" /></a>
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
 
 							<!-- Small Description -->
-							 <!--<p>Tell us about you</p>-->
-
-							<!-- Contact Address -->
-							<address>
-								<ul class="list-unstyled">
-									<li class="footer-sprite address">
-										418-725 Boulevard Lebourgneuf<br>
-										Québec, QC G2J 0C4, Canada<br>
-									</li>
-									<li class="footer-sprite phone">
-										Phone: (418) 555-1234
-									</li>
-									<li class="footer-sprite email">
-										<a href="mailto:info@codeboxx.biz">info@codeboxx.biz</a>
-									</li>
-								</ul>
-							</address>
-							<!-- /Contact Address -->
-
+							<p>
+								We have the conviction that we create the most innovative and reliable products on the market. <br/>
+								Contact us today for any questions you might have.
+							</p>
+							<h2>(418) 555-1234</h2>
 						</div>
+						<!-- /col #1 -->
 
-
-						<div class="col-md-4"> <!-- Newsletter Form   +   Social Icons -->
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
 
 							<!-- Newsletter Form -->
-							<h4 class="letter-spacing-1">KEEP IN TOUCH</h4>
-							<p>Subscribe to Our Newsletter to get Important News &amp; Offers</p>
-
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
 							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -1192,60 +1337,35 @@
 							</form>
 							<!-- /Newsletter Form -->
 
-							<!-- Social Icons -->
-							<div class="mt-20">
-								
-								<!-- Facebook -->
-								<a href="http://www.facebook.com" target="_blank" class="social-icon social-icon-border social-facebook float-left" data-toggle="tooltip" data-placement="top" title="Facebook">
-									<i class="icon-facebook"></i>
-									<i class="icon-facebook"></i>
-								</a>
-
-								<!-- Twitter -->
-								<a href="http://www.twitter.com" target="_blank" class="social-icon social-icon-border social-twitter float-left" data-toggle="tooltip" data-placement="top" title="Twitter">
-									<i class="icon-twitter"></i>
-									<i class="icon-twitter"></i>
-								</a>
-
-								<!-- Google Plus-->
-								<a href="http://www.google.com/photos/about/" target="_blank" class="social-icon social-icon-border social-gplus float-left" data-toggle="tooltip" data-placement="top" title="Google plus">
-									<i class="icon-gplus"></i>
-									<i class="icon-gplus"></i>
-								</a>
-
-								<!-- Linkedin -->
-								<a href="http://www.linkedin.com" target="_blank" class="social-icon social-icon-border social-linkedin float-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
-									<i class="icon-linkedin"></i>
-									<i class="icon-linkedin"></i>
-								</a>
-
-								<!-- RSS -->
-								<a href="http://www.rss.com" target="_blank" class="social-icon social-icon-border social-rss float-left" data-toggle="tooltip" data-placement="top" title="Rss">
-									<i class="icon-rss"></i>
-									<i class="icon-rss"></i>
-								</a>
-					
-							</div>
-							<!-- /Social Icons -->
 
 						</div>
+						<!-- /col #2 -->
 
 					</div>
 
+
 				</div>
 
-				<div class="copyright"> <!-- Copyrights + Terms and Conditions + Privacy -->
+				<div class="copyright">
 					<div class="container">
 						<ul class="float-right m-0 list-inline mobile-block">
 							<li><!--<a href="#">-->Terms &amp; Conditions<!--</a>--></li>
 							<li>&bull;</li>
 							<li><!--<a href="#">-->Privacy<!--</a>--></li>
 						</ul>
-						&copy; All Rights Reserved, Company LTD
+						&copy; All Rights Reserved, Rocket Elevators
 					</div>
 				</div>
+
 			</footer>
 			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#topMain" id="toTop"></a>
 
 		</div>
 		<!-- /wrapper -->
