@@ -460,7 +460,7 @@
 							</div>
 
 							<div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg"
-								data-x="680"
+								data-x="475"
 								data-y="500" 
 								data-speed="300"
 								data-start="2500"
@@ -471,7 +471,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="300"
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-danger btn-3d btn-lg" href="residential.html" target="_blank">RESIDENTIAL SERVICE &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-danger btn-3d btn-lg" href="commercial.html" target="_blank">CORPORATE SERVICE &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 
@@ -1433,7 +1433,12 @@
 
 								<div class="row"> <!-- button: message-->
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										<button type="submit" class="btn btn-primary" onclick="alertMessageSent()"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									<script>
+											function alertMessageSent() {
+												alert("Thank You! Your message has been successfully sent!");
+											}
+									</script>
 									</div>
 								</div>
 							</form>
