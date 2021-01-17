@@ -1162,7 +1162,12 @@
 
 								<div class="row"> <!-- button: message-->
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										<button type="submit" class="btn btn-primary" onclick="alertMessageSent()"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									<script>
+											function alertMessageSent() {
+												alert("Thank You! Your message has been successfully sent!");
+											}
+									</script>
 									</div>
 								</div>
 							</form>
